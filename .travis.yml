@@ -1,0 +1,12 @@
+language: c
+os:
+  - linux
+  - osx
+before_script:
+  - git clone https://github.com/asdf-vm/asdf.git
+  - . asdf/asdf.sh
+script:
+  - asdf plugin-add jx ./
+  - asdf list-all jx
+#  - asdf plugin-test jx ./ 'jx version --no-version-check --no-verify'
+  - asdf plugin-test jx https://github.com/vbehar/asdf-jx.git
